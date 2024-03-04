@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <title>Gym Training Website</title>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="#">Gym Training</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#programs">Programs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#gallery">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="bg-gray-900 text-white py-12 text-center">
+    <div class="container">
+        <h1 class="text-4xl md:text-6xl font-bold mb-4">Achieve Your Fitness Goals</h1>
+        <p class="text-lg">Join our training programs and transform your body!</p>
+        <a href="#programs" class="btn btn-primary mt-4">Explore Programs</a>
+    </div>
+</section>
+
+<!-- Training Programs Section -->
+<!-- Training Programs Section -->
+<!-- Training Programs Section -->
+<section id="programs" class="py-10">
+    <div class="container text-center">
+        <h2 class="text-4xl font-bold mb-8">Our Training Programs</h2>
+
+        <div x-data="{ activeTab: 1 }">
+            <!-- Program Tabs -->
+            <div class="flex mb-4">
+                <button @click="activeTab = 1" :class="{ 'bg-gray-900 text-white': activeTab === 1 }" class="flex-1 py-2 px-4 border border-gray-300">Weight Loss</button>
+                <button @click="activeTab = 2" :class="{ 'bg-gray-900 text-white': activeTab === 2 }" class="flex-1 py-2 px-4 border border-gray-300">Muscle Building</button>
+                <button @click="activeTab = 3" :class="{ 'bg-gray-900 text-white': activeTab === 3 }" class="flex-1 py-2 px-4 border border-gray-300">Cardio</button>
+            </div>
+
+            <!-- Program Details -->
+            <div x-show="activeTab === 1">
+                <h3 class="text-xl font-bold mb-3">Weight Loss Program</h3>
+                <div class="program-image-container mb-3">
+                    <img src="https://source.unsplash.com/800x600/?weight-loss" alt="Weight Loss Program" class="program-image">
+                </div>
+                <p class="text-gray-600">Achieve your weight loss goals with our specialized training program. Tailored workouts and nutrition guidance included.</p>
+            </div>
+
+            <div x-show="activeTab === 2">
+                <h3 class="text-xl font-bold mb-3">Muscle Building Program</h3>
+                <div class="program-image-container mb-3">
+                    <img src="https://source.unsplash.com/800x600/?fight" alt="Muscle Building Program" class="program-image">
+                </div>
+                <p class="text-gray-600">Get stronger and build muscle with our intensive muscle building program. Expert trainers and personalized routines.</p>
+            </div>
+
+            <div x-show="activeTab === 3">
+                <h3 class="text-xl font-bold mb-3">Cardio Program</h3>
+                <div class="program-image-container mb-3">
+                    <img src="https://source.unsplash.com/800x600/?cardio" alt="Cardio Program" class="program-image">
+                </div>
+                <p class="text-gray-600">Improve your cardiovascular health and endurance with our cardio-focused training program. Varied cardio exercises and routines.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Add this style in the head section or your CSS file */
+    .program-image-container {
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .program-image {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .program-image-container:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+</style>
+
+<!-- Image Gallery Section -->
+<section id="gallery" class="bg-gray-100 py-10">
+    <div class="container text-center">
+        <h2 class="text-4xl font-bold mb-8">Image Gallery</h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <!-- Image 1 -->
+            <div class="gallery-item">
+                <div class="image-container">
+                    <img src="https://source.unsplash.com/800x600/?gym" alt="Gym Image" class="gallery-image">
+                </div>
+            </div>
+
+            <!-- Image 2 (Add more as needed) -->
+            <div class="gallery-item">
+                <div class="image-container">
+                    <img src="https://source.unsplash.com/800x600/?fitness" alt="Fitness Image" class="gallery-image">
+                </div>
+            </div>
+
+            <!-- Add more images as needed -->
+            <div class="gallery-item">
+                <div class="image-container">
+                    <img src="https://source.unsplash.com/800x600/?karate" alt="Fitness Image" class="gallery-image">
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="image-container">
+                    <img src="https://source.unsplash.com/800x600/?cardio" alt="Fitness Image" class="gallery-image">
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="image-container">
+                    <img src="https://source.unsplash.com/800x600/?body builder" alt="Fitness Image" class="gallery-image">
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Add this style in the head section or your CSS file */
+    .gallery-item {
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .image-container {
+        position: relative;
+    }
+
+    .gallery-image {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .gallery-item:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .gallery-item:hover .gallery-image {
+        transform: scale(1.2);
+    }
+</style>
+
+
+
+
+<!-- Contact Section -->
+<section id="contact" class="py-10">
+    <div class="container text-center">
+        <h2 class="text-4xl font-bold mb-8">Contact Us</h2>
+
+        <div x-data="{ open: false }">
+            <button @click="open = !open" class="btn btn-primary mb-4">Toggle Form</button>
+            
+            <form x-show="open" id="contactForm" class="glassmorphism p-4">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<script>
+    // JavaScript for Responsive Form
+    document.addEventListener('DOMContentLoaded', function () {
+        var contactForm = document.getElementById('contactForm');
+
+        contactForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+            // Add your form submission logic here
+        });
+    });
+</script>
+
+<style>
+    /* Glassmorphism Effect for Contact Form */
+    .glassmorphism {
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 15px;
+        backdrop-filter: blur(10px);
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.2), 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+
+    .glassmorphism input,
+    .glassmorphism textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: none;
+        border-radius: 5px;
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+    }
+
+    .glassmorphism button {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background: #4CAF50;
+        color: #fff;
+        cursor: pointer;
+    }
+</style>
+
+
+<!-- Footer Section -->
+<footer class="bg-dark text-white py-4">
+    <div class="container text-center">
+        <p>&copy; 2024 Gym Training. All rights reserved.</p>
+    </div>
+</footer>
+
+<!-- Add this script at the end of the body section -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var navToggle = document.getElementById('navToggle');
+        var navbarNav = document.getElementById('navbarNav');
+
+        navToggle.addEventListener('click', function () {
+            navbarNav.classList.toggle('show');
+        });
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
